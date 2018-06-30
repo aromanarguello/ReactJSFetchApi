@@ -30,8 +30,6 @@ class InfoCardContent extends Component{
     // }
 
     render() {
-        {console.log(this.props.lat)}
-        {console.log(this.props.lon)}
         {this.renderLocation()}
         if(!this.props.provider) {
             return (

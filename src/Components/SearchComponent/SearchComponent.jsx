@@ -26,7 +26,6 @@ class SearchComponent extends Component {
         this.props.location.map( practice => {
             return practice.practices.map( x => {
                 if (x.visit_address.zip === this.state.search) {
-                    console.log('lat',x.visit_address.lat)
                     this.props.fetchLocation( x.visit_address.lat, x.visit_address.lon)
                 }
             })
@@ -36,7 +35,6 @@ class SearchComponent extends Component {
 
 
     render() {
-        {console.log(this.props.location)}
         return (
             <div id='searchBar'>
             <form onSubmit={this.handleSubmit} id='searchBarForm'>
