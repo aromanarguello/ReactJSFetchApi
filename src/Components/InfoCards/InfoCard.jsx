@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Paper } from '@material-ui/core';
 import { fetchDoctors } from '../../actions/actions';
 import { InfoCardContent } from '../index';
+import { styles } from './InfoCard.styles';
 
 class InfoCards extends Component {
     componentWillMount() {
@@ -12,9 +12,12 @@ class InfoCards extends Component {
 
     render() {
         return (
-            <Paper>
-                <InfoCardContent props={this.props.provider} />
-            </Paper>
+            <div id='infoCardContainer' >
+                <InfoCardContent 
+                    style={styles.listContentStyles}
+                    props={this.props.provider}
+                 />
+            </div>
         );
     }
 }

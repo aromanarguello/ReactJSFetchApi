@@ -2,7 +2,6 @@ body {
   background: #FC466B;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 #cardContainer { 
@@ -12,5 +11,70 @@ body {
 
 #paperContainer {
   grid-row-start: 2;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  max-width: 100%;
 }
+
+#infoCardContainer {
+  width: 100%;
+}
+
+
+#infoCardContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  width: 400px;
+  height: 200px;
+  /* justify-content: space-evenly; */
+  margin: none;
+  text-align: center;
+}
+
+.infoCards {
+  margin: 5px;
+  width: 100%;
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  grid-column-gap: 15px;
+  grid-row-gap: 40px
+}
+
+.infoCardContentSpecialty {
+  grid-row-start: 3;
+  grid-column: span 4;
+  text-align: start;
+  padding-bottom: 2px;
+  padding-left: 15px;
+}
+
+.infoCardContentName {
+  grid-row-start: 2;
+  text-align: start;
+  align-self: center;
+  padding-left: 15px;
+}
+
+.infoCardContentBtnContainer {
+  display: grid;
+  grid-column: span 2;
+  grid-row: span 2;
+  grid-template: auto;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 10px 30px 0 0
+}
+
+/* .infoCardContentContainer {
+  display: grid;
+  grid-auto-columns: 1fr 2fr
+} */
+
 
