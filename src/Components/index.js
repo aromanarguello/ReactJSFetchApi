@@ -8,7 +8,8 @@ import InfoCardImage from './InfoCards/InfoCardImage';
 import InfoCardModalBio from './InfoCards/InfoCardModal/InfoCardModalBio';
 import InfoCardModalAddress from './InfoCards/InfoCardModal/InfoCardModalAddress';
 import InfoCardModalEducation from './InfoCards/InfoCardModal/InfoCardModalEducation';
-import InfoCardModalInsurance from './InfoCards/InfoCardModal/InfoCardModalInsurance'
+import InfoCardModalInsurance from './InfoCards/InfoCardModal/InfoCardModalInsurance';
+import SearchComponent from './SearchComponent/SearchComponent';
 
 export {
     PaperContainer,
@@ -21,5 +22,6 @@ export {
     InfoCardModalBio,
     InfoCardModalAddress,
     InfoCardModalEducation,
-    InfoCardModalInsurance
+    InfoCardModalInsurance,
+    SearchComponent
 }

@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { PaperContainer } from '../Components/index';
+import { PaperContainer, SearchComponent } from '../Components/index';
 import '../App.css';
 
 class App extends Component {
   render() {
     return (
-      <div id='cardContainer' >
-        <PaperContainer />
+      <div>
+        <div id='cardContainer' >
+          <div id='searchComponentContainer'>
+            <SearchComponent />
+          </div>
+          <PaperContainer />
+        </div>
       </div>
     );
   }

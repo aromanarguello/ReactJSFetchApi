@@ -60,8 +60,7 @@ class InfoCardModalAddress extends Component {
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
           open={this.state.open}
-          onClose={this.handleClose}
-        >
+          onClose={this.handleClose}>
           <div style={getModalStyle()} className={classes.paper}>
             <Typography variant="title" id="modal-title">
               Address:
