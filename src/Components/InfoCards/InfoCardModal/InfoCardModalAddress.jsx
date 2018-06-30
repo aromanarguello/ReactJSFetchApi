@@ -47,7 +47,6 @@ class InfoCardModalAddress extends Component {
 
   render() {
     const { classes } = this.props;
-    {console.log(this.props)}
     return (
       <div>
         <button
@@ -66,13 +65,15 @@ class InfoCardModalAddress extends Component {
               Address:
             </Typography>
             <Typography variant="subheading" id="simple-modal-description">
-              {this.props.props.props.practices.map( address => (
-                 <Typography>
+              {this.props.props.props.practices.map( (address, index) => (
+                 <Typography key={index}>
+                 <div>
                       {address.visit_address.street},
                       <br/>
                       {address.visit_address.city}, {address.visit_address.state},
                       <br/>
                       {address.visit_address.zip}
+                 </div>
                   </Typography>
               ))}
             </Typography>

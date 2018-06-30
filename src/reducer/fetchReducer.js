@@ -7,6 +7,12 @@ export default function action( state = {}, action) {
                 ...state,
                 provider: action.payload.data
             }
+        case ActionTypes.FETCH_LOCATIONS:
+            return {
+                ...state,
+                lat: action.lat,
+                lon: action.lon
+            }
         default: 
             return state
     }
