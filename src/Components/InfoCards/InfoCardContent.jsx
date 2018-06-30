@@ -1,70 +1,61 @@
-import React from 'react';
-import { styles } from './InfoCard.styles';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Typography, Paper } from '@material-ui/core';
+import { fetchDoctors } from '../../actions/actions';
+import { styles } from './InfoCard.styles';
+import { 
+    InfoCardButtons, 
+    InfoCardName, 
+    InfoCardSpecialty,
+    InfoCardImage,
+    InfoCardModalBio
+} from '../index';
 
 
-const InfoCardContent = (props) => {
-    const renderInfo = () => {
-        if(!props.props) {
+class InfoCardContent extends Component{
+
+    componentWillMount() {
+        this.props.fetchDoctors()
+    }
+
+    toggleModal(props) {
+
+    }
+
+    render() {
+        if(!this.props.provider) {
             return (
                 <div>loading...</div>
             )
         } else {
-            { console.log(props.props) }
             return (
-                props.props.map((x, i) => (
-                    <Paper key={i} className='infoCardContentContainer'>
-                            <li 
-                                style={styles.listContentStyles} 
-                                id='infoCardContent' 
+                <div className='infoCards'>
+                    {this.props.provider.map((x, i) => (
+                        <Paper 
+                            key={i} 
+                            className='infoCardContentContainer'
+                            elevation={6}>
+                            <li
+                                style={styles.listContentStyles}
+                                id='infoCardContent'
                                 className='infoCardContentListItem'>
-                            <img
-                                className='infoCardContentImage' 
-                                src={x.profile.image_url} 
-                                style={styles.imageStyles}/>
-                                <div className='infoCardContentName'>
-                                    <Typography>
-                                        {x.profile.first_name + ' ' + x.profile.last_name}, {x.profile.title}
-                                    </Typography>
-                                </div>
-                                <Typography className='infoCardContentSpecialty'>
-                                    Specialty:
-                                    <br/>
-                                        {x.specialties.map(specialty => (
-                                            specialty.name
-                                        ))}
-                                </Typography>
-                                <div className='infoCardContentBtnContainer'>
-                                    <button 
-                                        className='infoCardContentBioBtn'
-                                        style={styles.btnStyles}>
-                                            Bio
-                                    </button>
-                                    <button 
-                                        className='infoCardContentBioBtn'
-                                        style={styles.btnStyles}>
-                                            Address
-                                    </button>
-                                    <button 
-                                        className='infoCardContentBioBtn'
-                                        style={styles.btnStyles}>
-                                            Education
-                                    </button>
-                                    <button 
-                                        className='infoCardContentBioBtn'
-                                        style={styles.btnStyles}>
-                                            Insurance
-                                    </button>
-                                </div>
+                                <InfoCardImage props={x} />
+                                <InfoCardName props={x} />
+                                <InfoCardSpecialty props={x} />
+                                <InfoCardButtons props={x} />
                             </li>
-                    </Paper>
-                ))
+                        </Paper>
+                    ))}
+                </div>
             )
         }
-    }  
-    return (
-        <div className='infoCards' >{renderInfo()}</div>
-    );
+    }
 };
 
-export default InfoCardContent;
+function mapStateToProps(state) {
+    return {
+        provider: state.reducer.provider
+    }
+}
+
+export default connect(mapStateToProps, { fetchDoctors })(InfoCardContent);
