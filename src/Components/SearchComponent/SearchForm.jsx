@@ -10,7 +10,9 @@ const SearchForm = props => {
                 placeholder='State Abbr.'
                 type='text'
                 maxLength='2'></input>
-            <button className='searchBarBtn' style={styles.searchBarBtn}>Enter</button>
+            <button className='searchBarBtn' style={styles.searchBarBtn}>
+                Enter
+            </button>
         </form>
     );
 };

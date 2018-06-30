@@ -92,5 +92,9 @@ body {
 #searchBarForm {
   display: flex;
   align-content: center;
-  flex-direction: column;
+  flex-direction: column;  
+}
+
+*:focus {
+  outline: none;
 }

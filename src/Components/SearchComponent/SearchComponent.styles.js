@@ -7,7 +7,7 @@ export const styles = {
         height: '30px',
         fontSize: '27px',
         color: '#FFB75E',
-        textAlign: 'center'
+        textAlign: 'center',
     },
     searchBarBtn: {
         width: '120px',
@@ -18,5 +18,9 @@ export const styles = {
         margin: '10px auto 0 auto',
         color: 'white',
         fontSize: '22px',
+        '&:hover': {backgroundColor: 'white'}
     }
 }
+
+// width: 100px;
+// transition: ease-in-out, width .35s ease-in-out;

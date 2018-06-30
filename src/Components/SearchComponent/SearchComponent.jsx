@@ -30,7 +30,9 @@ class SearchComponent extends Component {
     render() {
         return (
             <div id='searchBar'>
-                <SearchForm submit={this.handleSubmit} search={this.handleSearch} />
+                <SearchForm 
+                    submit={this.handleSubmit} 
+                    search={this.handleSearch} />
             </div>
         );
     }
