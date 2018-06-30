@@ -27,7 +27,7 @@ body {
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 1fr 2fr 2fr;
   width: 380px;
-  height: 200px;
+  height: 230px;
   margin: none;
   text-align: center;
 }

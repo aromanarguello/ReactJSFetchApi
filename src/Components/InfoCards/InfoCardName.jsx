@@ -5,7 +5,7 @@ const InfoCardName = props => {
     return (
         <div className='infoCardContentName'>
             <Typography>
-                {props.props.profile.first_name + ' ' + props.props.profile.last_name}, {props.props.profile.title}
+                <b>{props.props.profile.first_name + ' ' + props.props.profile.last_name}, {props.props.profile.title}</b>
             </Typography>
         </div>
     );

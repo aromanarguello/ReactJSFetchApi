@@ -6,7 +6,7 @@ const InfoCardSpecialty = props => {
             Specialty:
             <br />
             {props.props.specialties.map(specialty => (
-                specialty.name
+                <li>{specialty.name}</li>
             ))}
         </Typography>
     );
