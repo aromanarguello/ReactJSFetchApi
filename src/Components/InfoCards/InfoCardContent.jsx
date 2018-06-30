@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Typography, Paper } from '@material-ui/core';
-import { fetchDoctors } from '../../actions/actions';
+import { fetchDoctors, fetchLocation } from '../../actions/actions';
 import { styles } from './InfoCard.styles';
 import { 
     InfoCardButtons, 
     InfoCardName, 
     InfoCardSpecialty,
     InfoCardImage,
-    InfoCardModalBio
 } from '../index';
 
 
@@ -18,11 +17,22 @@ class InfoCardContent extends Component{
         this.props.fetchDoctors()
     }
 
-    toggleModal(props) {
+    renderLocation() {
+        if (this.props.lat != undefined && this.props.lon != undefined)
+        {
+            this.props.fetchDoctors(this.props.lat, this.props.lon)
 
+        }
     }
+    
+    // componentDidMount() {
+    //     this.props.fetchDoctors()
+    // }
 
     render() {
+        {console.log(this.props.lat)}
+        {console.log(this.props.lon)}
+        {this.renderLocation()}
         if(!this.props.provider) {
             return (
                 <div>loading...</div>
@@ -54,8 +64,10 @@ class InfoCardContent extends Component{
 
 function mapStateToProps(state) {
     return {
-        provider: state.reducer.provider
+        provider: state.reducer.provider,
+        lat: state.reducer.lat,
+        lon: state.reducer.lon
     }
 }
 
-export default connect(mapStateToProps, { fetchDoctors })(InfoCardContent);
+export default connect(mapStateToProps, { fetchDoctors, fetchLocation })(InfoCardContent);

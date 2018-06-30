@@ -1,1 +1,2 @@
 export const FETCH_DOCTORS = 'FETCH_DOCTORS';
+export const FETCH_LOCATIONS = 'FETCH_LOCATIONS';
