@@ -22,15 +22,9 @@ class SearchComponent extends Component {
     }
 
     handleSubmit(e) {
+        console.log(this.state)
         e.preventDefault()
-        this.props.location.map( practice => {
-            return practice.practices.map( x => {
-                if (x.visit_address.zip === this.state.search) {
-                    this.props.fetchLocation( x.visit_address.lat, x.visit_address.lon)
-                }
-            })
-
-        })
+        this.props.fetchDoctors(this.state.search)
     }
 
 
@@ -41,8 +35,9 @@ class SearchComponent extends Component {
                 <input 
                     style={styles.searchBar}
                     onChange={this.handleSearch}
-                    placeholder='Zipcode'
-                    type='number'></input>
+                    placeholder='State Abbr.'
+                    type='text'
+                    maxLength='2'></input>
                     <button className='searchBarBtn' style={styles.searchBarBtn}>Enter</button>
             </form>
             </div>
