@@ -17,20 +17,11 @@ class InfoCardContent extends Component{
         this.props.fetchDoctors()
     }
 
-    renderLocation() {
-        if (this.props.lat != undefined && this.props.lon != undefined)
-        {
-            this.props.fetchDoctors(this.props.lat, this.props.lon)
-
-        }
-    }
-    
     // componentDidMount() {
     //     this.props.fetchDoctors()
     // }
 
     render() {
-        {this.renderLocation()}
         if(!this.props.provider) {
             return (
                 <div>loading...</div>
