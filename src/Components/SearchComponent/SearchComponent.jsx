@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Typography } from '@material-ui/core';
 import { styles } from './SearchComponent.styles';
 import { fetchDoctors, fetchLocation } from '../../actions/actions';
+import { SearchForm } from '../index';
 
 class SearchComponent extends Component {
     constructor(props) {
@@ -27,19 +27,10 @@ class SearchComponent extends Component {
         this.props.fetchDoctors(this.state.search)
     }
 
-
     render() {
         return (
             <div id='searchBar'>
-            <form onSubmit={this.handleSubmit} id='searchBarForm'>
-                <input 
-                    style={styles.searchBar}
-                    onChange={this.handleSearch}
-                    placeholder='State Abbr.'
-                    type='text'
-                    maxLength='2'></input>
-                    <button className='searchBarBtn' style={styles.searchBarBtn}>Enter</button>
-            </form>
+                <SearchForm submit={this.handleSubmit} search={this.handleSearch} />
             </div>
         );
     }

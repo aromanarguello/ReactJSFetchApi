@@ -10,6 +10,7 @@ import InfoCardModalAddress from './InfoCards/InfoCardModal/InfoCardModalAddress
 import InfoCardModalEducation from './InfoCards/InfoCardModal/InfoCardModalEducation';
 import InfoCardModalInsurance from './InfoCards/InfoCardModal/InfoCardModalInsurance';
 import SearchComponent from './SearchComponent/SearchComponent';
+import SearchForm from './SearchComponent/SearchForm';
 
 export {
     PaperContainer,
@@ -23,5 +24,6 @@ export {
     InfoCardModalAddress,
     InfoCardModalEducation,
     InfoCardModalInsurance,
-    SearchComponent
+    SearchComponent,
+    SearchForm
 }
