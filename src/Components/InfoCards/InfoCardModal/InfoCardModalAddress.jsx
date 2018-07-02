@@ -66,7 +66,7 @@ class InfoCardModalAddress extends Component {
             </Typography>
             <Typography variant="subheading" id="simple-modal-description">
               {this.props.props.props.practices.map( (address, index) => (
-                 <Typography key={index}>
+                 <Typography>
                  <div>
                       {address.visit_address.street},
                       <br/>

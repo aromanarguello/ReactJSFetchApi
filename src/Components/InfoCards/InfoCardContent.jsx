@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Typography, Paper } from '@material-ui/core';
-import { fetchDoctors, fetchLocation } from '../../actions/actions';
+import { Paper } from '@material-ui/core';
+import { fetchDoctors } from '../../actions/actions';
 import { styles } from './InfoCard.styles';
 import { 
     InfoCardButtons, 
@@ -16,10 +16,6 @@ class InfoCardContent extends Component{
     componentWillMount() {
         this.props.fetchDoctors()
     }
-
-    // componentDidMount() {
-    //     this.props.fetchDoctors()
-    // }
 
     render() {
         if(!this.props.provider) {
@@ -40,7 +36,9 @@ class InfoCardContent extends Component{
                                 className='infoCardContentListItem'>
                                 <InfoCardImage props={x} />
                                 <InfoCardName props={x} />
-                                <InfoCardSpecialty props={x} />
+                                <InfoCardSpecialty 
+                                    props={x}
+                                    styles={styles.specialtyStyles} />
                                 <InfoCardButtons props={x} />
                             </li>
                         </Paper>
@@ -54,9 +52,7 @@ class InfoCardContent extends Component{
 function mapStateToProps(state) {
     return {
         provider: state.reducer.provider,
-        lat: state.reducer.lat,
-        lon: state.reducer.lon
     }
 }
 
-export default connect(mapStateToProps, { fetchDoctors, fetchLocation })(InfoCardContent);
+export default connect(mapStateToProps, { fetchDoctors })(InfoCardContent);

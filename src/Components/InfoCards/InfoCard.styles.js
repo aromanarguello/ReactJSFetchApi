@@ -18,5 +18,9 @@ export const styles = {
         border: 0,
         color: 'white',
         backgroundColor: '#FFB75E'
+    },
+    specialtyStyles: {
+        listStyle: 'none', 
+        padding: '0'
     }
 }
