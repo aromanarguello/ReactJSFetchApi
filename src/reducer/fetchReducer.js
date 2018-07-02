@@ -7,11 +7,11 @@ export default function action( state = {}, action) {
                 ...state,
                 provider: action.payload.data
             }
-        case ActionTypes.FETCH_LOCATIONS:
+        case ActionTypes.FETCH_BY_SPECIALTY:
+        console.log({action})
             return {
                 ...state,
-                lat: action.lat,
-                lon: action.lon
+                specialty: action.payload
             }
         default: 
             return state

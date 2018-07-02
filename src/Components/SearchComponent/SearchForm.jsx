@@ -1,16 +1,19 @@
 import React from 'react';
-import { styles } from './SearchComponent.styles';
 
 const SearchForm = props => {
+    console.log({props})
     return (
         <form onSubmit={props.submit} id='searchBarForm'>
             <input
-                style={styles.searchBar}
+                style={props.styles.searchBar}
                 onChange={props.search}
-                placeholder='State Abbr.'
+                placeholder={props.prop}
                 type='text'
-                maxLength='2'></input>
-            <button className='searchBarBtn' style={styles.searchBarBtn}>
+                maxLength={props.maxLength}></input>
+            <button
+                className='searchBarBtn' 
+                style={props.styles.searchBarBtn}
+                onClick={props.click}>
                 Enter
             </button>
         </form>
