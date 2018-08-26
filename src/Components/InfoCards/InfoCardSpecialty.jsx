@@ -1,26 +1,23 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
+import { InfoCardSpecialtyHeader as Header} from '../index';
+
 const InfoCardSpecialty = props => {
-    if (props.props.specialties.length > 3) {
+    if (props.props.specialties.length > 2) {
         return (
-            <Typography className='infoCardContentSpecialty'>
-            <div style={props.styles}>
-                    {props.props.specialties[0].name}
-                    <br/>
-                    {props.props.specialties[1].name}
-                    <br/>
+            <div className='infoCardContentSpecialty'>
+                <Header />
+                <div id='specialtyConditional'>
+                    <Typography>
+                        {props.props.specialties[0].name}
+                    </Typography>
+                </div>
             </div>
-                </Typography>
         )
     } else {
         return (
             <div className='infoCardContentSpecialty'>
-                <Typography >
-                    <b>
-                        Specialty:
-                    </b>
-                    <br />
-                </Typography>
+                <Header />
                     {props.props.specialties.map((specialty, i) => (
                     <ul style={props.styles} key={i}>
                         <Typography>

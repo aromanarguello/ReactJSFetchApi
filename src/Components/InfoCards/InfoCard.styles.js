@@ -21,6 +21,6 @@ export const styles = {
     },
     specialtyStyles: {
         listStyle: 'none', 
-        padding: '0'
+        padding: '0',
     }
 }

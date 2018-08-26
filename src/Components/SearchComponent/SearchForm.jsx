@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SearchForm = props => {
-    console.log({props})
     return (
         <form onSubmit={props.submit} id='searchBarForm'>
             <input

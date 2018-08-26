@@ -4,6 +4,7 @@ import InfoCardContent from './InfoCards/InfoCardContent';
 import InfoCardButtons from './InfoCards/InfoCardButtons'
 import InfoCardName from './InfoCards/InfoCardName';
 import InfoCardSpecialty from './InfoCards/InfoCardSpecialty';
+import InfoCardSpecialtyHeader from './InfoCards/InfoCardSpecialtyHeader';
 import InfoCardImage from './InfoCards/InfoCardImage';
 import InfoCardModalBio from './InfoCards/InfoCardModal/InfoCardModalBio';
 import InfoCardModalAddress from './InfoCards/InfoCardModal/InfoCardModalAddress';
@@ -25,5 +26,6 @@ export {
     InfoCardModalEducation,
     InfoCardModalInsurance,
     SearchComponent,
-    SearchForm
+    SearchForm,
+    InfoCardSpecialtyHeader
 }

@@ -50,7 +50,6 @@ body {
   grid-row-start: 3;
   grid-column: span 4;
   text-align: start;
-  padding-bottom: 2px;
   padding-left: 15px;
 }
 
@@ -103,4 +102,8 @@ body {
 
 .infoCardContentListSpecialty {
   grid-column-start: 1;
+}
+
+.specialtyConditional {
+  padding: 0;
 }
